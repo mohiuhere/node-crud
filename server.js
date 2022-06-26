@@ -3,6 +3,8 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 const bodyparser = require('body-parser')
 const path = require('path')
+const indexRoute = require('./server/routes/index_router')
+const signupRoute = require('./server/routes/signup_router')
 const connecDB = require('./server/db/connection')
 
 const app = express()
@@ -27,17 +29,9 @@ app.use('/css' ,express.static(path.resolve(__dirname, "assets/css")))
 app.use('/js' ,express.static(path.resolve(__dirname, "assets/js")))
 app.use('/img' ,express.static(path.resolve(__dirname, "assets/img")))
 
-
-
-app.get('/', function(req, res){
-    // res.send('working')
-    res.render('index')
-})
-
-app.get('/signup', function(req, res){
-    res.render('add_user')
-})
-
+//route
+app.use('/add-user', signupRoute)
+app.use('/', indexRoute)
 
 //start server when conected to database
 const serverStart = async function(){

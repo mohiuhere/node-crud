@@ -18,6 +18,7 @@ app.use(morgan('tiny'))
 //parse request to body-parser
 app.use(bodyparser.json())
 
+
 //set view engine
 app.set('view engine', 'ejs')
     //if put ejs file in other folde

@@ -1,31 +1,27 @@
 <!-- main site -->
+
 <div class="container">
 <table class="table table-dark table-hover">
     <table class="table-auto w-full text-amber-200">
         <thead class="bg-gray-800">
             <tr>
-                <th>Song</th>
-                <th>Artist</th>
-                <th>Year</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Post</th>
             </tr>
         </thead>
         <tbody class="bg-zinc-800">
+            <% for(var i=0; i<user.length; i++){%>
             <tr>
-                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td>Malcolm Lockyer</td>
-                <td>1961</td>
+                <td><%=user[i].name%></td>
+                <td><%=user[i].email%></td>
+                <td><%=user[i].post%></td>
             </tr>
-            <tr>
-                <td>Witchy Woman</td>
-                <td>The Eagles</td>
-                <td>1972</td>
-            </tr>
-            <tr>
-                <td>Shining Star</td>
-                <td>Earth, Wind, and Fire</td>
-                <td>1975</td>
-            </tr>
+            <%}%>
         </tbody>
   </table>
+
+
+
 </div>
 <!-- main site -->

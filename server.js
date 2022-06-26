@@ -27,8 +27,15 @@ app.use('/css' ,express.static(path.resolve(__dirname, "assets/css")))
 app.use('/js' ,express.static(path.resolve(__dirname, "assets/js")))
 app.use('/img' ,express.static(path.resolve(__dirname, "assets/img")))
 
+
+
 app.get('/', function(req, res){
-    res.send('working')
+    // res.send('working')
+    res.render('index')
+})
+
+app.get('/signup', function(req, res){
+    res.render('add_user')
 })
 
 
